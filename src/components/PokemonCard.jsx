@@ -1,5 +1,5 @@
 function PokemonCard(props) {
-  console.log(props);
+  console.log(props.pokemon.name);
   return (
     <figure>
       {props.pokemon.imgSrc !== "" ? (
