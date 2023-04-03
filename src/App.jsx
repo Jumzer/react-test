@@ -28,13 +28,17 @@ const pokemonList = [
 ];
 
 function App() {
-  const [index, setIndex] = useState(0);
-  const pokemon = pokemonList[index];
+  const [pokemonIndex, setPokemonIndex] = useState(0);
+  const pokemon = pokemonList[pokemonIndex];
   const nextPokemon = () => {
-    setIndex(index + 1);
+    pokemonIndex < pokemonList.length - 1
+      ? setPokemonIndex(pokemonIndex + 1)
+      : setPokemonIndex(0);
   };
   const previousPokemon = () => {
-    setIndex(index - 1);
+    pokemonIndex > 0
+      ? setPokemonIndex(pokemonIndex - 1)
+      : setPokemonIndex(pokemonList.length - 1);
   };
 
   return (
